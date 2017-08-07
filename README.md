@@ -38,7 +38,7 @@ A ReactJS full-stack boilerplate based on `typescript` with `ssr`, custom `apoll
 - Tests: `yarn test`
 
 ## Explore
-Feel free to explore example app at `http://localhost:3000`. 
+Feel free to explore example app at `http://localhost:3000` and `GraphiQL` interface at `http://localhost:3000/graphiql`. 
 
 ### Libraries
 
