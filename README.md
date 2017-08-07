@@ -1,4 +1,6 @@
-<img src="http://www.vectorgraphit.com/wp-content/uploads/2013/11/moustache_09.jpg" align="center" alt="react-hipstaplate" />
+<div align="center">
+  <img src="http://www.vectorgraphit.com/wp-content/uploads/2013/11/moustache_09.jpg" align="center" alt="react-hipstaplate" />
+</div>
 
 <br />
 
