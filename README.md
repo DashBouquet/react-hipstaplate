@@ -37,6 +37,9 @@ A ReactJS full-stack boilerplate based on `typescript` with `ssr`, custom `apoll
 - Build: `yarn build`
 - Tests: `yarn test`
 
+## Explore
+Feel free to explore example app at `http://localhost:3000`. 
+
 ### Libraries
 
 - React
