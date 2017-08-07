@@ -1,0 +1,23 @@
+{
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    ["babel-plugin-styled-components", { "ssr": true, "displayName": true, "preprocess": false }],
+    ["module-resolver", {
+      "root": ["./app"],
+      "alias": {
+        "utils": "./utils",
+        "modules": "./modules",
+        "components": "./components",
+        "client": "./client",
+        "server": "./server"
+      }
+    }]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  }
+}
