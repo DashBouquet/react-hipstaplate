@@ -1,6 +1,6 @@
 {
   "name": "react-hipstaplate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Modern ReactJS/express full-stack boilerplate",
   "repository": {
     "type": "git",
@@ -78,6 +78,7 @@
     "babel-plugin-styled-components": "^1.1.7",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "concurrently": "^3.5.0",
+    "copy-webpack-plugin": "^4.0.1",
     "enzyme": "^2.9.1",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",
