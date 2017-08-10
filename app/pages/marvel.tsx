@@ -4,9 +4,9 @@ import Marvel from 'modules/Marvel';
 import withData from 'client/data';
 import { compose } from 'recompose';
 
-const Module: React.StatelessComponent<{}> = (): JSX.Element => (
+const Module: React.StatelessComponent<any> = ({ url: { query } }): JSX.Element => (
   <Layout>
-    <Marvel />
+    <Marvel query={query} />
   </Layout>
 );
 

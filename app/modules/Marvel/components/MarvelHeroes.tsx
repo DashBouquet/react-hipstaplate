@@ -2,6 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 import MarvelPager from '../containers/MarvelPager';
 
+const { Link } = require('client/routes');
+
 interface IProps {
   characters: any[];
   total: number;
@@ -14,10 +16,12 @@ const Heroes = styled.div`
   margin-left: 15px;
 `;
 
-const Hero = styled.div`
+const Hero = styled.a`
   text-align: center;
   margin-bottom: 25px;
   margin-right: 35px;
+  text-decoration: none;
+  cursor: pointer;
 `;
 
 const HeroImageWrapp = styled.div`
@@ -44,12 +48,14 @@ const MarvelHeroes: React.StatelessComponent<IProps> = ({ characters, total }): 
     <Heroes>
       {
         characters.map((char, index) => (
-          <Hero key={index}>
-            <HeroImageWrapp>
-              <HeroImage src={`${char.thumbnail.path}.${char.thumbnail.extension}`} alt={char.name} />
-            </HeroImageWrapp>
-            <HeroName>{char.name}</HeroName>
-          </Hero>
+          <Link route={`/marvel/${char.id}`} key={index}>
+            <Hero>
+              <HeroImageWrapp>
+                <HeroImage src={`${char.thumbnail.path}.${char.thumbnail.extension}`} alt={char.name} />
+              </HeroImageWrapp>
+              <HeroName>{char.name}</HeroName>
+            </Hero>
+          </Link>
         ))
       }
     </Heroes>

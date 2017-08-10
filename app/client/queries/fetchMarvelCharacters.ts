@@ -8,6 +8,7 @@ export const fetchMarvelCharacters = gql`
       results {
         id
         name
+        description
         thumbnail {
           path
           extension

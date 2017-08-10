@@ -4,9 +4,10 @@ import * as bodyParser from 'body-parser';
 import { graphqlExpress, graphiqlExpress } from 'graphql-server-express';
 import { schema } from './schema';
 
+const routes = require('../client/routes');
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
-const handle = app.getRequestHandler();
+const handle = routes.getRequestHandler(app);
 const APP_PORT = process.env.APP_PORT || 3000;
 
 let server;
