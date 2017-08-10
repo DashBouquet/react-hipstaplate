@@ -33,7 +33,7 @@ A ReactJS full-stack boilerplate based on `typescript` with `ssr`, custom `apoll
 ## To run
 
 - Development: `yarn start`
-- Production: `yarnd start:prod`
+- Production: `yarn start:prod`
 - Build: `yarn build`
 - Tests: `yarn test`
 
