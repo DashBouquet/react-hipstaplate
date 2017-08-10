@@ -25,6 +25,7 @@ const Header: React.StatelessComponent<{}> = (): JSX.Element => (
       <Link href="/"><Href>Home</Href></Link>
       <Link href="/component"><Href>Component</Href></Link>
       <Link href="/module"><Href>Module</Href></Link>
+      <Link href="/marvel"><Href>Heroes</Href></Link>
       <Link href="/about"><Href>About</Href></Link>
     </Nav>
   </header>

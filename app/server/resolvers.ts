@@ -3,12 +3,14 @@ import mockPosts from './mocks/posts';
 import { find, propEq, filter } from 'ramda';
 import { author } from './queries/author';
 import { posts } from './queries/posts';
+import { marvel } from './queries/marvel';
 import { upvotePost } from './mutations/upvote';
 
 export const resolvers = {
   Query: {
     posts,
-    author
+    author,
+    marvel
   },
   Mutation: {
     upvotePost
