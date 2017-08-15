@@ -1,11 +1,10 @@
 const fs = require('fs');
 const rimraf = require('rimraf');
-const union = require('ramda').union;
 const pages = require('./pages');
 const client = require('./client');
 const server = require('./server');
 
-const createFiles = union(pages, client, server);
+const createFiles = pages.concat(client, server);
 
 const removeFiles = [
   './.git',
@@ -24,14 +23,23 @@ const removeFiles = [
   './app/static/img/*'
 ];
 
-removeFiles
-  .map((path) => rimraf(path, fs, (err) => {
-    if (err) throw err;
+const remove = (path) => new Promise((resolve, reject) => {
+  rimraf(path, fs, (err) => {
+    if (err) reject(err);
     console.log(`successfully deleted files by path: ${path}`);
-  }));
+    resolve();
+  });
+});
 
-createFiles
-  .map((file) => fs.writeFile(file.path, file.content, (err) => {
-    if (err) return console.log(err);
+const create = (file) => new Promise((resolve, reject) => {
+  fs.writeFile(file.path, file.content, (err) => {
+    if (err) reject(err);
     console.log(`successfully created file: ${file.name}`);
-  }));
+    resolve();
+  });
+});
+
+Promise
+  .all(removeFiles.map(path => remove(path)))
+  .then(res => createFiles.map(file => create(file)))
+  .catch(err => { throw err });
