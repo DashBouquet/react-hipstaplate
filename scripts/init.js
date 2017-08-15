@@ -1,8 +1,8 @@
 const fs = require('fs');
 const rimraf = require('rimraf');
-const pages = require('./pages');
-const client = require('./client');
-const server = require('./server');
+const pages = require('./blank/pages');
+const client = require('./blank/client');
+const server = require('./blank/server');
 
 const createFiles = pages.concat(client, server);
 

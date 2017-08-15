@@ -1,6 +1,6 @@
 {
   "name": "react-hipstaplate",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Modern ReactJS/express full-stack boilerplate",
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
   "author": "Vitali Shalak",
   "license": "MIT",
   "scripts": {
-    "initialize": "node scripts/init.js",
+    "initialize": "yarn install && node scripts/init.js",
     "start": "tsc && yarn start:dev",
     "build": "tsc && yarn build:next",
     "start:dev": "cross-env NODE_ENV=development concurrently \"yarn watch:tsc\" \"yarn start:next\"",
