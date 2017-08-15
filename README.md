@@ -28,10 +28,9 @@ A ReactJS full-stack boilerplate based on `typescript` with `ssr`, custom `apoll
 - clone repo `https://github.com/DashBouquet/hipstaplate.git`
 - `cd react-hipstaplate`
 - `npm i -g yarn`
-- `yarn initialize`
+- `yarn install`
 
 ## To run
-
 - Development: `yarn start`
 - Production: `yarn start:prod`
 - Build: `yarn build`
@@ -40,8 +39,11 @@ A ReactJS full-stack boilerplate based on `typescript` with `ssr`, custom `apoll
 ## Explore
 Feel free to explore example app at `http://localhost:3000` and `GraphiQL` interface at `http://localhost:3000/graphiql`. 
 
-### Libraries
+## Initialization
+To initiate your own `blank` application and remove `example app` with `git` entities simply hit `yarn initialize` command in terminal.
+That command will clear `components`, `modules`, `pages` directories and will recreate blank entities for `redux`, `next` and `apollo`.
 
+### Libraries
 - React
 - Redux
 - Redux Apollo
@@ -57,7 +59,6 @@ Feel free to explore example app at `http://localhost:3000` and `GraphiQL` inter
 - Jest
 
 ### Features
-
 - SSR (Server Side Rendering)
 - Action creators
 - Reducer creators
