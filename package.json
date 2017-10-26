@@ -74,7 +74,7 @@
     "recompose": "^0.24.0",
     "redux": "^3.7.2",
     "redux-saga": "^0.15.6",
-    "styled-components": "^2.1.1"
+    "styled-components": "2.2.2"
   },
   "devDependencies": {
     "@types/node": "^8.0.17",
