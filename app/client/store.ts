@@ -10,15 +10,11 @@ const sagaMiddleware = createSagaMiddleware();
 
 function create(apollo, initialState) {
   const middlewares = [
-    sagaMiddleware,
-    apollo.middleware()
+    sagaMiddleware
   ];
 
   const store: any = createStore(
-    combineReducers({
-      ...reducers,
-      apollo: apollo.reducer()
-    }),
+    combineReducers({...reducers}),
     initialState,
     composeWithDevTools(applyMiddleware(...middlewares))
   );
