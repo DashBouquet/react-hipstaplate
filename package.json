@@ -55,6 +55,7 @@
     "@types/recompose": "0.24.2",
     "apollo-cache-inmemory": "1.0.0",
     "apollo-client": "2.0.1",
+    "apollo-fetch": "^0.6.0",
     "apollo-link-http": "^1.0.0",
     "body-parser": "^1.17.2",
     "cross-env": "^5.0.1",

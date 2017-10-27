@@ -295,6 +295,12 @@ apollo-client@2.0.1:
   optionalDependencies:
     "@types/async" "2.0.44"
 
+apollo-fetch@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/apollo-fetch/-/apollo-fetch-0.6.0.tgz#aae9b28c117af344b091ec8ba4d1a5aa0474dc5d"
+  dependencies:
+    isomorphic-fetch "^2.2.1"
+
 apollo-link-dedup@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/apollo-link-dedup/-/apollo-link-dedup-1.0.0.tgz#f0134ac495cc42e7e43dfafe7126645baa1e03bc"

@@ -1,17 +1,13 @@
 import ApolloClient from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
-import { InMemoryCache, NormalizedCache } from 'apollo-cache-inmemory'
-import fetch from 'isomorphic-fetch';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { createApolloFetch } from 'apollo-fetch';
+
+const fetch = createApolloFetch({ uri: 'http://localhost:3000/graphql' });
 
 let apolloClient: any = null;
 const proc = process as any;
 const glob = global as any;
-
-interface IWindow extends Window {
-  __APOLLO_STATE__: NormalizedCache;
-}
-
-declare const window: IWindow;
 
 // Polyfill fetch() on the server (used by apollo-client)
 if (!proc.browser) {
@@ -25,7 +21,7 @@ function create() {
       uri: 'http://localhost:3000/graphql',
       credentials: 'same-origin'
     }),
-    cache: new InMemoryCache().restore(window.__APOLLO_STATE__)
+    cache: new InMemoryCache()
   });
 }
 
