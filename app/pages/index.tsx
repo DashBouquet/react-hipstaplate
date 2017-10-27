@@ -1,4 +1,5 @@
 import * as React from 'react';
+// Require styled to avoid the issue https://github.com/styled-components/styled-components/issues/1168 on page reload
 const styled = require('styled-components').default;
 import Layout from 'components/Layout';
 
