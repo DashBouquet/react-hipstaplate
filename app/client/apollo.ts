@@ -1,9 +1,18 @@
-import { ApolloClient, createNetworkInterface } from 'react-apollo';
+import ApolloClient from 'apollo-client';
+import { HttpLink } from 'apollo-link-http';
+import { InMemoryCache, NormalizedCache } from 'apollo-cache-inmemory'
+import { ApolloProvider } from 'react-apollo';
 import fetch from 'isomorphic-fetch';
 
 let apolloClient: any = null;
 const proc = process as any;
 const glob = global as any;
+
+interface IWindow extends Window {
+  __APOLLO_STATE__: NormalizedCache;
+}
+
+declare const window: IWindow;
 
 // Polyfill fetch() on the server (used by apollo-client)
 if (!proc.browser) {
@@ -13,12 +22,11 @@ if (!proc.browser) {
 function create() {
   return new ApolloClient({
     ssrMode: !proc.browser, // Disables forceFetch on the server (so queries are only run once)
-    networkInterface: createNetworkInterface({
-      uri: 'http://localhost:3000/graphql', // Server URL (must be absolute)
-      opts: { // Additional fetch() options like `credentials` or `headers`
-        credentials: 'same-origin'
-      }
-    })
+    link: new HttpLink({
+      uri: 'http://localhost:3000/graphql',
+      credentials: 'same-origin'
+    }),
+    cache: new InMemoryCache().restore(window.__APOLLO_STATE__)
   });
 }
 
