@@ -18,7 +18,7 @@ function create() {
   return new ApolloClient({
     ssrMode: !proc.browser, // Disables forceFetch on the server (so queries are only run once)
     link: new HttpLink({
-      uri: 'http://localhost:3000/graphql',
+      uri: 'http://localhost:3000/graphql', // Server URL (must be absolute)
       credentials: 'same-origin'
     }),
     cache: new InMemoryCache()

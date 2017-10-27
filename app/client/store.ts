@@ -8,7 +8,7 @@ let reduxStore = null;
 const proc = process as any;
 const sagaMiddleware = createSagaMiddleware();
 
-function create(apollo, initialState) {
+function create(initialState) {
   const middlewares = [
     sagaMiddleware
   ];
@@ -23,14 +23,14 @@ function create(apollo, initialState) {
   return store;
 }
 
-export function initRedux(apollo, initialState = {}) {
+export function initRedux(initialState = {}) {
   if (!proc.browser) {
-    return create(apollo, initialState);
+    return create(initialState);
   }
 
   // Reuse store on the client-side
   if (!reduxStore) {
-    reduxStore = create(apollo, initialState);
+    reduxStore = create(initialState);
   }
 
   return reduxStore;
