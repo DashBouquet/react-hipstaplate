@@ -71,7 +71,7 @@
     "react-apollo": "^1.4.10",
     "react-dom": "16.0.0",
     "react-redux": "^5.0.5",
-    "recompose": "^0.24.0",
+    "recompose": "0.26.0",
     "redux": "^3.7.2",
     "redux-saga": "^0.15.6",
     "styled-components": "2.2.2"
