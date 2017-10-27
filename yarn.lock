@@ -2882,6 +2882,10 @@ graphql-server-express@1.2.0:
   dependencies:
     apollo-server-express "^1.2.0"
 
+graphql-tag@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.5.0.tgz#b43bfd8b5babcd2c205ad680c03e98b238934e0f"
+
 graphql-tools@2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-2.6.1.tgz#9f6d1600951a05b18b83c52986c42eee4fd3cb1b"

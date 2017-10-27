@@ -1,7 +1,6 @@
 import ApolloClient from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache, NormalizedCache } from 'apollo-cache-inmemory'
-import { ApolloProvider } from 'react-apollo';
 import fetch from 'isomorphic-fetch';
 
 let apolloClient: any = null;
