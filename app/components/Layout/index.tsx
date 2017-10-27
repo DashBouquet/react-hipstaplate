@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
-import styled from 'styled-components';
+const styled = require('styled-components').default;
 
 const Layout: React.StatelessComponent<any> = ({ children }): JSX.Element => (
   <section>

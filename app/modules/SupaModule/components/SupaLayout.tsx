@@ -3,7 +3,7 @@ import SupaAddItem from '../containers/SupaAddItem';
 import SupaItemsRestore from '../containers/SupaItemsRestore';
 import SupaItem from '../containers/SupaItem';
 import SupaItemSearch from '../containers/SupaItemSearch';
-import styled from 'styled-components';
+const styled = require('styled-components').default;
 
 interface IProps {
   list: [object];
