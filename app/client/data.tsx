@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Provider } from 'react-redux';
 import Head from 'next/head';
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
 import { initApollo } from './apollo';
@@ -38,10 +39,10 @@ export default (ComposedComponent) => {
         try {
           // Run all GraphQL queries
           await getDataFromTree(
-            // No need to use the Redux Provider
-            // because Apollo sets up the store for us
-            <ApolloProvider client={apollo} store={redux}>
-              <ComposedComponent url={url} {...composedInitialProps} />
+            <ApolloProvider client={apollo}>
+              <Provider store={redux}>
+                <ComposedComponent url={url} {...composedInitialProps} />
+              </Provider>
             </ApolloProvider>
           );
         } catch (error) {
@@ -81,10 +82,10 @@ export default (ComposedComponent) => {
 
     public render() {
       return (
-        // No need to use the Redux Provider
-        // because Apollo sets up the store for us
-        <ApolloProvider client={this.apollo} store={this.redux}>
-          <ComposedComponent {...this.props} />
+        <ApolloProvider client={this.apollo}>
+          <Provider store={this.redux}>
+            <ComposedComponent {...this.props} />
+          </Provider>
         </ApolloProvider>
       );
     }
