@@ -3,7 +3,11 @@ import { Header } from '../Header';
 import { Footer } from '../Footer';
 const styled = require('styled-components').default;
 
-const Layout: React.StatelessComponent<any> = ({ children }): JSX.Element => (
+interface IProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.StatelessComponent<IProps> = ({ children }): JSX.Element => (
   <section>
     <Header />
     <Content>
