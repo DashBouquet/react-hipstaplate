@@ -1,5 +1,6 @@
 import * as React from 'react';
-import styled, { keyframes } from 'styled-components';
+const styled = require('styled-components').default;
+const { keyframes } = require('styled-components');
 
 const pulse = keyframes`
   0%, 40%, 100% { transform: scaleY(0.4) }

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Provider } from 'react-redux';
 import Head from 'next/head';
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
 import { initApollo } from './apollo';
@@ -31,17 +32,17 @@ export default (ComposedComponent) => {
       // and extract the resulting data
       if (!proc.browser) {
         const apollo = initApollo();
-        const redux = initRedux(apollo);
+        const redux = initRedux();
         // Provide the `url` prop data in case a GraphQL query uses it
         const url = {query: ctx.query, pathname: ctx.pathname};
 
         try {
           // Run all GraphQL queries
           await getDataFromTree(
-            // No need to use the Redux Provider
-            // because Apollo sets up the store for us
-            <ApolloProvider client={apollo} store={redux}>
-              <ComposedComponent url={url} {...composedInitialProps} />
+            <ApolloProvider client={apollo}>
+              <Provider store={redux}>
+                <ComposedComponent url={url} {...composedInitialProps} />
+              </Provider>
             </ApolloProvider>
           );
         } catch (error) {
@@ -76,15 +77,15 @@ export default (ComposedComponent) => {
       const { serverState }: any = this.props;
 
       this.apollo = initApollo();
-      this.redux = initRedux(this.apollo, serverState);
+      this.redux = initRedux(serverState);
     }
 
     public render() {
       return (
-        // No need to use the Redux Provider
-        // because Apollo sets up the store for us
-        <ApolloProvider client={this.apollo} store={this.redux}>
-          <ComposedComponent {...this.props} />
+        <ApolloProvider client={this.apollo}>
+          <Provider store={this.redux}>
+            <ComposedComponent {...this.props} />
+          </Provider>
         </ApolloProvider>
       );
     }

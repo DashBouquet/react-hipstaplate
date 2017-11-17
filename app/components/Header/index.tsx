@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Link from 'next/link';
-import styled from 'styled-components';
+const styled = require('styled-components').default;
 
 const Nav = styled.nav`
   display: flex;

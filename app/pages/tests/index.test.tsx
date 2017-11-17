@@ -1,7 +1,10 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, configure } from 'enzyme';
 import Home from '../index';
 import Layout from '../../components/Layout';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({ adapter: new Adapter() });
 
 describe('Home page', () => {
   it('should render Layout wrapper', () => {

@@ -8,7 +8,12 @@
     "inlineSources": false,
     "preserveConstEnums": true,
     "moduleResolution": "node",
-    "strictNullChecks": true,
+    
+    /* 
+      This is requred to resolve https://github.com/apollographql/apollo-client/issues/2503 
+      Will be removed after the issue is resolved
+    */
+    "strictNullChecks": false,
     "skipLibCheck": true,
     "allowJs": false,
     "experimentalDecorators": true,

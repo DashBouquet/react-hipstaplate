@@ -1,5 +1,6 @@
 import * as React from 'react';
-import styled from 'styled-components';
+// Require styled to avoid the issue https://github.com/styled-components/styled-components/issues/1168 on page reload
+const styled = require('styled-components').default;
 import Layout from 'components/Layout';
 
 const Image = styled.div`
